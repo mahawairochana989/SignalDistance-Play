@@ -81,7 +81,7 @@ https://mahawairochana989.github.io/SignalDistance-Play/
 4. Создай/выбери папку, например:
 
 ```text
-C:\Users\polina\Desktop\BCI\SignalDistance_WebGL_Build
+<папка-сборки-WebGL>
 ```
 
 5. Дождись конца сборки (часто 5–30+ минут).
@@ -108,7 +108,7 @@ TemplateData/
 В PowerShell:
 
 ```powershell
-cd C:\Users\polina\Desktop\BCI\SignalDistance_WebGL_Build
+cd <папка-сборки-WebGL>
 python -m http.server 8088
 ```
 
@@ -126,7 +126,7 @@ python -m http.server 8088
 1. Склонируй (если ещё нет) публичный репо:
 
 ```powershell
-cd C:\Users\polina\Desktop\BCI
+cd <родительская-папка>
 git clone https://github.com/mahawairochana989/SignalDistance-Play.git
 ```
 
@@ -141,7 +141,7 @@ git clone https://github.com/mahawairochana989/SignalDistance-Play.git
 4. Закоммить и запушь:
 
 ```powershell
-cd C:\Users\polina\Desktop\BCI\SignalDistance-Play
+cd <клон-репозитория-SignalDistance-Play>
 git add -A
 git status
 git commit -m "Publish WebGL build of Signal Distance"

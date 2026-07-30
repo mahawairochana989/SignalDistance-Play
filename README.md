@@ -24,7 +24,7 @@
 (должны появиться `index.html`, `Build/`, `TemplateData/`), затем:
 
 ```powershell
-cd C:\Users\polina\Desktop\BCI\SignalDistance-Play
+cd <клон-репозитория-SignalDistance-Play>
 git add -A
 git commit -m "Publish WebGL build"
 git push
