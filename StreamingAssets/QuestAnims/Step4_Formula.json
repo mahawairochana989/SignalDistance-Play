@@ -1,0 +1,42 @@
+{
+  "step": 4,
+  "title": "ШАГ 4 ФОРМУЛА",
+  "color": "#8CE6FF",
+  "animation": "interact_formula",
+  "duration": 1.0,
+  "bones": [
+    {
+      "name": "FormulaDial",
+      "uuid": "505b7724-9d16-4b25-aacf-4463e3984ca9",
+      "localPos": [
+        0.525,
+        1.225,
+        0.12
+      ],
+      "kind": "dial",
+      "channels": {
+        "rotation": [
+          [
+            0.0,
+            0,
+            0,
+            0
+          ],
+          [
+            0.5,
+            0,
+            0,
+            140
+          ],
+          [
+            1.0,
+            0,
+            0,
+            140
+          ]
+        ]
+      }
+    }
+  ],
+  "prompt": "E: повернуть формульный селектор"
+}

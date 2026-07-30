@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BCI Simulation Portal</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #070b14;
+      color: #e8f1ff;
+    }
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: rgba(10, 14, 24, 0.92);
+      border-bottom: 1px solid #243047;
+      z-index: 10;
+    }
+    .title {
+      font-weight: 600;
+      margin-right: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    button {
+      border: 1px solid #2f4d78;
+      background: #123055;
+      color: #d8e9ff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background: #194172; }
+    .hint {
+      font-size: 12px;
+      color: #9cb6d7;
+      margin-left: 8px;
+    }
+    iframe {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh - 56px);
+      border: 0;
+      background: #0a0f1a;
+    }
+    .fs iframe {
+      top: 0;
+      height: 100vh;
+    }
+    .fs .topbar {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="title" id="title">BCI Simulation</div>
+    <button id="btnFullscreen">Полный экран</button>
+    <button id="btnReload">Обновить</button>
+    <button id="btnOpen">Открыть напрямую</button>
+    <span class="hint">Esc — выход из полного экрана</span>
+  </div>
+  <iframe id="simFrame" allowfullscreen referrerpolicy="no-referrer"></iframe>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const title = params.get("title") || "BCI Simulation";
+    const url = params.get("url") || "https://mahawairochana989.github.io/BCI/bci-term-sims";
+    const frame = document.getElementById("simFrame");
+    const titleEl = document.getElementById("title");
+    titleEl.textContent = title;
+    frame.src = url;
+
+    const enterFullscreen = async () => {
+      const root = document.documentElement;
+      if (!document.fullscreenElement) {
+        try {
+          await root.requestFullscreen();
+          document.body.classList.add("fs");
+        } catch (_) {}
+      }
+    };
+
+    const exitFullscreen = () => {
+      document.body.classList.remove("fs");
+    };
+
+    document.getElementById("btnFullscreen").addEventListener("click", enterFullscreen);
+    document.getElementById("btnReload").addEventListener("click", () => {
+      frame.src = frame.src;
+    });
+    document.getElementById("btnOpen").addEventListener("click", () => {
+      window.open(url, "_blank");
+    });
+    document.addEventListener("fullscreenchange", () => {
+      if (!document.fullscreenElement) exitFullscreen();
+    });
+  </script>
+</body>
+</html>

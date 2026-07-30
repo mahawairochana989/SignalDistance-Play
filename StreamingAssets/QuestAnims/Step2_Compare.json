@@ -1,0 +1,42 @@
+{
+  "step": 2,
+  "title": "ШАГ 2 СРАВНЕНИЕ",
+  "color": "#FFB24D",
+  "animation": "interact_compare",
+  "duration": 0.95,
+  "bones": [
+    {
+      "name": "CompareLever",
+      "uuid": "d2396f45-d606-49a5-9680-391d1bf25494",
+      "localPos": [
+        0,
+        1.05,
+        0
+      ],
+      "kind": "lever",
+      "channels": {
+        "rotation": [
+          [
+            0.0,
+            0,
+            0,
+            0
+          ],
+          [
+            0.45,
+            -55,
+            0,
+            0
+          ],
+          [
+            0.9,
+            -55,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  ],
+  "prompt": "E: потянуть рычаг сравнения"
+}
