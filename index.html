@@ -24,6 +24,11 @@
       </div>
     </div>
     <script>
+window.unityWebView = window.unityWebView || {
+  init:function(){}, setMargins:function(){}, setVisibility:function(){},
+  loadURL:function(){}, evaluateJS:function(){}, destroy:function(){}
+};
+</script><script>
       var canvas = document.querySelector("#unity-canvas");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
