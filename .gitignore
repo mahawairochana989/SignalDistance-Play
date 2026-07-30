@@ -1,0 +1,4 @@
+# Ignore local Unity WebGL intermediates if copied by mistake
+*.tmp
+.DS_Store
+Thumbs.db
