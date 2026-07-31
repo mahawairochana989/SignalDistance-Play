@@ -121,7 +121,9 @@
                   unityInstance.SetFullscreen(1);
                 };
 
-              }).catch((message) => { var text = (message && message.message) ? message.message : String(message); console.error('[Unity]', message); alert('Unity WebGL error: ' + text); });
+              }).catch((message) => {
+                alert(message);
+              });
             };
 
       document.body.appendChild(script);
