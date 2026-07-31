@@ -55,9 +55,9 @@
       var loaderUrl = buildUrl + "/SignalDistance_WebGL_Build.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/SignalDistance_WebGL_Build.data.unityweb",
-        frameworkUrl: buildUrl + "/SignalDistance_WebGL_Build.framework.js.unityweb",
-        codeUrl: buildUrl + "/SignalDistance_WebGL_Build.wasm.unityweb",
+        dataUrl: buildUrl + "/SignalDistance_WebGL_Build.data",
+        frameworkUrl: buildUrl + "/SignalDistance_WebGL_Build.framework.js",
+        codeUrl: buildUrl + "/SignalDistance_WebGL_Build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "BCI_TRIZ",
         productName: "Signal Distance",
@@ -121,9 +121,7 @@
                   unityInstance.SetFullscreen(1);
                 };
 
-              }).catch((message) => {
-                alert(message);
-              });
+              }).catch((message) => { var text = (message && message.message) ? message.message : String(message); console.error('[Unity]', message); alert('Unity WebGL error: ' + text); });
             };
 
       document.body.appendChild(script);
