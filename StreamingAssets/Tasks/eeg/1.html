@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ЭЭГ · экран 1</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .task-page { max-width: 720px; margin: 0 auto; }
+    .back { display: inline-block; margin-bottom: 18px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    .screen {
+      margin: 18px 0; min-height: 220px; padding: 28px 22px; border: 1px solid var(--line-strong);
+      border-radius: 20px; background: #0d0d0d; cursor: pointer; text-align: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+      user-select: none;
+    }
+    .screen:hover { border-color: var(--accent); box-shadow: 0 0 28px var(--accent-glow); }
+    .screen .n { font-size: 3rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .screen .hint { color: var(--muted); }
+    .block { display: none; margin: 18px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); border-left: 3px solid var(--accent); animation: fadeIn 0.2s ease; }
+    .block.open { display: block; }
+    .label { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+    textarea {
+      width: 100%; min-height: 100px; margin-top: 8px; border-radius: 12px;
+      border: 1px solid var(--line-strong); background: #080808; color: var(--text);
+      font: inherit; padding: 12px 14px; resize: vertical;
+    }
+    textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap task-page">
+    <a class="back" href="./index.html">← К сцене этапов</a>
+    <p class="muted small">Симуляция ЭЭГ · этап-экран 1 из 5</p>
+    <h1>Экран <span class="hi">1</span></h1>
+
+    <div class="screen" id="screen" role="button" tabindex="0" aria-label="Нажмите, чтобы показать задание 1">
+      <span class="n">1</span>
+      <span class="hint">Нажмите на экран — появится задание 1</span>
+    </div>
+
+    <div class="block" id="taskBlock">
+      <div class="label">Задание 1</div>
+      <h2 style="margin:0 0 10px;font-size:1.2rem">1. Один ползунок: ослабление</h2>
+      <p>Поставьте ползунки: «Ослабление черепом» = 0,4; «Мощность α» = 0,8; «Мощность β» = 0,2; «Импеданс» = 15; «Шум» = 0,2. Запишите из блока измерений V_scalp и SNR.</p>
+    </div>
+
+    <div class="block" id="answerBlock">
+      <div class="label">Ваш ответ</div>
+      <textarea id="answer" placeholder="Напишите ответ своими словами"></textarea>
+    </div>
+  </main>
+  <script>
+    const screen = document.getElementById("screen");
+    function reveal() {
+      document.getElementById("taskBlock").classList.add("open");
+      document.getElementById("answerBlock").classList.add("open");
+      screen.querySelector(".hint").textContent = "Задание 1 открыто";
+      document.getElementById("answer").focus();
+    }
+    screen.addEventListener("click", reveal);
+    screen.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); reveal(); }
+    });
+  </script>
+</body>
+</html>
