@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kana Laser — Ряд А</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <span id="hud-level">Уровень 1</span>
+        <span id="hud-script">Хирагана</span>
+      </div>
+      <div class="hud-center">
+        <span id="hud-lives"></span>
+      </div>
+      <div class="hud-right">
+        <span id="hud-coins">🪙 0</span>
+        <span id="hud-progress">0/3</span>
+      </div>
+    </div>
+
+    <div id="stage">
+      <img id="bg-gif" src="assets/galaxy.gif?v=2" alt="" aria-hidden="true" />
+      <canvas id="game" width="960" height="640"></canvas>
+    </div>
+
+    <!-- Title -->
+    <section id="screen-title" class="screen">
+      <div class="panel hero-panel">
+        <img src="assets/boss-baby.png" alt="Boss Baby" class="hero-preview" />
+        <h1>Kana Laser</h1>
+        <p class="tagline">Ряд А · Хирагана & Катакана</p>
+        <p class="hint">WASD / стрелки — движение · Пробел — лазер</p>
+        <button id="btn-start" class="btn primary">Начать обучение</button>
+      </div>
+    </section>
+
+    <!-- Tutorial -->
+    <section id="screen-tutorial" class="screen hidden">
+      <div class="panel tutorial-panel">
+        <h2>Ряд А — слушай и запоминай</h2>
+        <p class="sub">Каждая буква озвучивается. Нажми «Далее», чтобы перейти к следующей.</p>
+        <div class="kana-card">
+          <div id="tut-kana" class="big-kana">あ</div>
+          <div id="tut-roma" class="roma">a</div>
+          <div id="tut-script" class="script-badge">Хирагана</div>
+        </div>
+        <div class="tut-actions">
+          <button id="btn-tut-replay" class="btn ghost">🔊 Ещё раз</button>
+          <button id="btn-tut-next" class="btn primary">Далее</button>
+          <button id="btn-tut-skip" class="btn ghost">Пропустить обучение</button>
+        </div>
+        <div id="tut-dots" class="dots"></div>
+      </div>
+    </section>
+
+    <!-- Level intro -->
+    <section id="screen-level" class="screen hidden">
+      <div class="panel">
+        <h2 id="level-title">Уровень 1</h2>
+        <p id="level-desc" class="sub"></p>
+        <button id="btn-level-go" class="btn primary">В бой!</button>
+      </div>
+    </section>
+
+    <!-- Feedback flash -->
+    <div id="flash" class="flash hidden"></div>
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- Game over / win -->
+    <section id="screen-end" class="screen hidden">
+      <div class="panel">
+        <h2 id="end-title">Победа!</h2>
+        <p id="end-msg" class="sub"></p>
+        <p id="end-coins" class="coins-big">🪙 0</p>
+        <button id="btn-restart" class="btn primary">Играть снова</button>
+      </div>
+    </section>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

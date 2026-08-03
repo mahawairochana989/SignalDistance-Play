@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" width="240" height="300">
+  <defs>
+    <radialGradient id="body" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff3b4a"/>
+      <stop offset="55%" stop-color="#c40818"/>
+      <stop offset="100%" stop-color="#4a0008"/>
+    </radialGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff7a86" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#7a0010" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- tendrils -->
+  <path d="M40 220 C10 180 20 120 55 95" fill="none" stroke="#8b0010" stroke-width="14" stroke-linecap="round"/>
+  <path d="M200 220 C230 170 220 115 185 90" fill="none" stroke="#8b0010" stroke-width="14" stroke-linecap="round"/>
+  <path d="M70 250 C30 260 25 290 55 295" fill="none" stroke="#a00018" stroke-width="12" stroke-linecap="round"/>
+  <path d="M170 250 C210 265 215 292 185 296" fill="none" stroke="#a00018" stroke-width="12" stroke-linecap="round"/>
+  <!-- body -->
+  <ellipse cx="120" cy="175" rx="78" ry="95" fill="url(#body)"/>
+  <ellipse cx="120" cy="175" rx="78" ry="95" fill="url(#shine)"/>
+  <!-- head -->
+  <ellipse cx="120" cy="95" rx="68" ry="72" fill="url(#body)"/>
+  <!-- jaw drip -->
+  <path d="M70 130 Q120 175 170 130 Q150 155 120 168 Q90 155 70 130Z" fill="#2a0006"/>
+  <!-- teeth -->
+  <path d="M82 132 L90 155 L98 132 L106 158 L114 132 L122 160 L130 132 L138 158 L146 132 L154 155 L162 132" fill="#f5f7ff" stroke="#dfe6ff" stroke-width="1"/>
+  <!-- eyes -->
+  <ellipse cx="88" cy="88" rx="22" ry="28" fill="#f7fbff"/>
+  <ellipse cx="152" cy="88" rx="22" ry="28" fill="#f7fbff"/>
+  <ellipse cx="92" cy="92" rx="7" ry="10" fill="#111"/>
+  <ellipse cx="148" cy="92" rx="7" ry="10" fill="#111"/>
+  <!-- tongue -->
+  <path d="M120 150 C135 175 155 195 168 210 C145 205 125 195 118 175 C112 195 95 208 75 214 C95 198 110 175 120 150Z" fill="#ff4d6d"/>
+  <path d="M120 155 C128 175 138 190 148 200" fill="none" stroke="#b01030" stroke-width="3"/>
+  <!-- chest mark -->
+  <path d="M120 145 L95 210 L120 195 L145 210 Z" fill="#1a0004" opacity="0.55"/>
+</svg>
